@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   example:
-    image: flask_dify:1.0  # Use the custom image built manually
+    image: dify-app:1.0  # Use the custom image built manually
     ports:
       - "5000:5000"  # Maps host port 5000 to container port 5000
     environment:
