@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{{ chat_app_name }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-font: 'Microsoft JhengHei', 'PingFang TC', 'Heiti TC', 'Apple LiGothic', sans-serif;
+            --text-color: #333;
+            --bg-color: #fff;
+            --border-color: #e0e0e0;
+        }
+        
+        body, html {
+            height: 100%;
+            width: 100%;
+            font-family: var(--primary-font);
+            font-size: 18px; /* 基礎字型大小增加 */
+            line-height: 1.5;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        .chatbot-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+        
+        .interface-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #3a539b;
+            text-align: center;
+        }
+        
+        .chatbot-iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 550px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbot-container">
+        <h1 class="interface-title">{{ chat_app_name }}</h1>
+        <iframe 
+            src={{ dify_url }}
+            class="chatbot-iframe"
+            allow="microphone"
+            loading="lazy">
+        </iframe>
+    </div>
+</body>
+</html>
